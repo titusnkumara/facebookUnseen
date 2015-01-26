@@ -1,0 +1,23 @@
+{
+	"manifest_version": 2,
+	"name": "Facebook unseen messages",
+	"version": "0.0.2",
+	"description": "Dissable seen feature in facebook",
+    "permissions": [
+        "webRequest", "webRequestBlocking", "http://*/*", "https://*/*","tabs"
+    ],
+	"icons": {
+		"128": "icons/icon_128.png",
+		"48": "icons/icon_48.png"
+	},
+	"background": {
+      "scripts": ["js/background.js"],
+      "persistent": true
+  },
+  "content_scripts": [
+		{
+			"matches": ["<all_urls>","http://*/*","https://*/*"],
+			"js": ["js/dummy.js"]
+		}
+	]
+}
